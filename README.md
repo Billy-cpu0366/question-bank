@@ -49,7 +49,7 @@
 
 1. 克隆该项目
 ```bash
-git clone https://github.com/yourusername/question-bank.git
+git clone https://github.com/Billy-cpu0366/question-bank.git
 cd question-bank
 ```
 
