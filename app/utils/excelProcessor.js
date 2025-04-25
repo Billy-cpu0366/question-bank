@@ -3,6 +3,61 @@ import { addQuestion } from '../models/Question';
 import * as XLSX from 'xlsx';
 
 /**
+ * 处理从内存中解析的Excel数据(用于Vercel环境)
+ * @param {Array<Array>} rows 解析后的Excel行数据
+ * @returns {Promise<{success: boolean, message: string}>} 处理结果
+ */
+export async function processExcelRowsFromMemory(rows) {
+  try {
+    console.log(`处理从内存中解析的Excel数据，共 ${rows.length} 行`);
+    
+    if (rows.length <= 1) {
+      return {
+        success: false,
+        message: 'Excel数据为空或只包含标题行'
+      };
+    }
+    
+    // 检测表格结构并提取题目
+    const questions = parseQuestionsFromExcel(rows);
+    console.log(`从表格中提取出 ${questions.length} 个问题`);
+    
+    if (questions.length === 0) {
+      return {
+        success: false,
+        message: '无法从Excel数据中解析出题目，请确保格式正确'
+      };
+    }
+    
+    // 设置处理的最大题目数量，防止处理太多题目导致超时
+    const MAX_QUESTIONS = 100; // 增加到100题
+    const questionsToProcess = questions.slice(0, MAX_QUESTIONS);
+    console.log(`将处理 ${questionsToProcess.length} 道题目（从 ${questions.length} 道中）`);
+    
+    // 处理每个问题
+    for (const question of questionsToProcess) {
+      await processQuestion(question);
+    }
+    
+    let message = `成功处理 ${questionsToProcess.length} 道题目`;
+    if (questions.length > MAX_QUESTIONS) {
+      message += `（共发现 ${questions.length} 道题目，限制处理数量为 ${MAX_QUESTIONS}）`;
+    }
+    
+    return {
+      success: true,
+      message: message
+    };
+  } catch (error) {
+    console.error('Excel数据处理错误:', error);
+    return {
+      success: false,
+      message: 'Excel数据处理失败: ' + error.message
+    };
+  }
+}
+
+/**
  * 处理上传的Excel文件
  * @param {string} filePath Excel文件路径
  * @returns {Promise<{success: boolean, message: string}>} 处理结果
@@ -41,43 +96,9 @@ export async function processExcelFile(filePath) {
     const rows = XLSX.utils.sheet_to_json(worksheet, { header: 1, defval: "" });
     console.log(`读取到 ${rows.length} 行数据`);
     
-    if (rows.length <= 1) {
-      return {
-        success: false,
-        message: 'Excel文件为空或只包含标题行'
-      };
-    }
+    // 使用通用处理函数处理Excel数据
+    return await processExcelRowsFromMemory(rows);
     
-    // 检测表格结构并提取题目
-    const questions = parseQuestionsFromExcel(rows);
-    console.log(`从表格中提取出 ${questions.length} 个问题`);
-    
-    if (questions.length === 0) {
-      return {
-        success: false,
-        message: '无法从Excel文件中解析出题目，请确保格式正确'
-      };
-    }
-    
-    // 设置处理的最大题目数量，防止处理太多题目导致超时
-    const MAX_QUESTIONS = 100; // 增加到100题
-    const questionsToProcess = questions.slice(0, MAX_QUESTIONS);
-    console.log(`将处理 ${questionsToProcess.length} 道题目（从 ${questions.length} 道中）`);
-    
-    // 处理每个问题
-    for (const question of questionsToProcess) {
-      await processQuestion(question);
-    }
-    
-    let message = `成功处理 ${questionsToProcess.length} 道题目`;
-    if (questions.length > MAX_QUESTIONS) {
-      message += `（共发现 ${questions.length} 道题目，限制处理数量为 ${MAX_QUESTIONS}）`;
-    }
-    
-    return {
-      success: true,
-      message: message
-    };
   } catch (error) {
     console.error('Excel processing error:', error);
     return {

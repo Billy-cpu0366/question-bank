@@ -2,7 +2,8 @@
 
 import { useState } from 'react';
 import axios from 'axios';
-import { processExcelFile } from '../utils/excelProcessor';
+import { processExcelFile, processExcelRowsFromMemory } from '../utils/excelProcessor';
+import * as XLSX from 'xlsx';
 
 export default function FileUpload({ onUploadStatus }) {
   const [file, setFile] = useState(null);
@@ -15,21 +16,70 @@ export default function FileUpload({ onUploadStatus }) {
     }
   };
 
-  const processUploadedFile = async (fileUrl, fileType) => {
+  // 直接处理Excel文件的base64内容
+  const processExcelBase64 = async (base64Content, fileName) => {
+    try {
+      console.log('处理Excel文件的base64内容...');
+      
+      // 将base64转换为二进制数据
+      const binaryString = window.atob(base64Content);
+      const len = binaryString.length;
+      const bytes = new Uint8Array(len);
+      for (let i = 0; i < len; i++) {
+          bytes[i] = binaryString.charCodeAt(i);
+      }
+      
+      // 解析Excel数据
+      const workbook = XLSX.read(bytes, {type: 'array'});
+      const sheetName = workbook.SheetNames[0];
+      const worksheet = workbook.Sheets[sheetName];
+      
+      // 将工作表转换为JSON对象数组
+      const rows = XLSX.utils.sheet_to_json(worksheet, { header: 1, defval: "" });
+      console.log(`从base64内容中读取到 ${rows.length} 行数据`);
+      
+      // 调用处理函数直接处理内存中的数据
+      return await processExcelRowsFromMemory(rows);
+      
+    } catch (error) {
+      console.error('处理Excel base64内容错误:', error);
+      return {
+        success: false,
+        message: '处理Excel文件失败: ' + error.message
+      };
+    }
+  };
+
+  const processUploadedFile = async (fileUrl, fileType, fileContent = null, isVercel = false) => {
     try {
       setIsProcessing(true);
       onUploadStatus('success', '文件上传成功，正在处理题库...');
       
       // 根据文件类型处理
       let result;
-      if (fileType === 'xlsx' || fileType === 'xls') {
-        console.log('处理Excel文件...');
-        result = await processExcelFile(fileUrl);
+      
+      // 判断是否在Vercel环境中，且有base64编码的文件内容
+      if (isVercel && fileContent) {
+        console.log('Vercel环境: 使用base64内容处理文件');
+        if (fileType === 'xlsx' || fileType === 'xls') {
+          result = await processExcelBase64(fileContent, fileUrl.split('/').pop());
+        } else {
+          result = {
+            success: false,
+            message: `暂不支持在Vercel环境中处理 .${fileType} 文件格式，敬请期待`
+          };
+        }
       } else {
-        result = {
-          success: false,
-          message: `暂不支持 .${fileType} 文件格式处理，敬请期待`
-        };
+        // 原有的处理逻辑 - 使用URL获取文件
+        if (fileType === 'xlsx' || fileType === 'xls') {
+          console.log('处理Excel文件...');
+          result = await processExcelFile(fileUrl);
+        } else {
+          result = {
+            success: false,
+            message: `暂不支持 .${fileType} 文件格式处理，敬请期待`
+          };
+        }
       }
       
       // 显示处理结果
@@ -84,9 +134,11 @@ export default function FileUpload({ onUploadStatus }) {
         // 获取文件信息
         const fileUrl = response.data.fileUrl;
         const fileType = file.name.split('.').pop().toLowerCase();
+        const fileContent = response.data.fileContent; // base64编码的文件内容
+        const isVercel = response.data.isVercel; // 是否在Vercel环境中
         
         // 处理上传的文件
-        await processUploadedFile(fileUrl, fileType);
+        await processUploadedFile(fileUrl, fileType, fileContent, isVercel);
         
         // 重置文件输入
         setFile(null);
