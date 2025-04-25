@@ -3,7 +3,6 @@ const nextConfig = {
   reactStrictMode: true,
   experimental: {
     serverComponentsExternalPackages: ['formidable'],
-    serverActions: true,
   },
   // 设置输出目录适用于Vercel
   output: 'standalone',
