@@ -3,7 +3,20 @@ const nextConfig = {
   reactStrictMode: true,
   experimental: {
     serverComponentsExternalPackages: ['formidable'],
+    serverActions: true,
   },
+  // 设置输出目录适用于Vercel
+  output: 'standalone',
+  // 增加API路由的超时时间
+  serverRuntimeConfig: {
+    api: {
+      bodyParser: {
+        sizeLimit: '10mb',
+      },
+      responseLimit: false,
+    },
+  },
+  // 解决CORS问题
   async headers() {
     return [
       {
@@ -16,6 +29,11 @@ const nextConfig = {
         ],
       },
     ];
+  },
+  // 配置webpack以处理文件上传
+  webpack: (config) => {
+    config.externals = [...config.externals, 'formidable'];
+    return config;
   },
 };
 

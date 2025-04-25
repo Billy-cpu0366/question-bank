@@ -6,16 +6,10 @@ import { mkdir } from 'fs/promises';
 import { processTextFile } from '../../utils/fileProcessor';
 import { processExcelFile } from '../../utils/excelProcessor';
 
-// Disable body parsing, we'll manually parse the FormData
-export const config = {
-  api: {
-    bodyParser: false,
-  },
-};
-
-// 配置项改为新的NextJS格式
+// App Router中的路由配置
 export const dynamic = 'force-dynamic';
-export const maxDuration = 300;
+export const runtime = 'nodejs'; // 默认是edge，但文件系统操作需要nodejs
+export const maxDuration = 300; // 秒
 
 export async function POST(request) {
   try {
