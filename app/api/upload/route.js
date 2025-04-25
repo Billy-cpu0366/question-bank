@@ -9,7 +9,7 @@ import { processExcelFile } from '../../utils/excelProcessor';
 // App Router中的路由配置
 export const dynamic = 'force-dynamic';
 export const runtime = 'nodejs'; // 默认是edge，但文件系统操作需要nodejs
-export const maxDuration = 300; // 秒
+export const maxDuration = 60; // 秒 - Vercel Hobby计划最大允许60秒
 
 export async function POST(request) {
   try {
