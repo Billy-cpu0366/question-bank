@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>题库网站项目展示</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 20px;
+            background-color: #3498db;
+            color: white;
+            border-radius: 8px;
+        }
+        h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        h2 {
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+            margin-top: 40px;
+            color: #2980b9;
+        }
+        .screenshot {
+            max-width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 20px 0;
+            border: 1px solid #ddd;
+        }
+        .feature {
+            display: flex;
+            margin-bottom: 40px;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .feature-image {
+            flex: 1;
+            padding: 20px;
+        }
+        .feature-text {
+            flex: 1;
+            padding: 20px;
+        }
+        .cta {
+            text-align: center;
+            margin: 40px 0;
+            padding: 20px;
+            background-color: #f1f1f1;
+            border-radius: 8px;
+        }
+        .btn {
+            display: inline-block;
+            background-color: #3498db;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        .btn:hover {
+            background-color: #2980b9;
+        }
+        .code {
+            background-color: #f1f1f1;
+            padding: 15px;
+            border-radius: 4px;
+            font-family: monospace;
+            white-space: pre-wrap;
+            margin: 15px 0;
+        }
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 20px;
+            background-color: #f1f1f1;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>题库网站项目</h1>
+            <p>一个集题库管理、AI辅助解析和模拟训练于一体的在线学习平台</p>
+        </header>
+
+        <h2>项目概述</h2>
+        <p>本项目是一个现代化的题库管理平台，集成了AI技术辅助解析题目和自动分类功能。该平台允许用户上传各种格式的题库文件，系统会自动处理并分类整理，用户可以浏览题库、进行模拟训练，系统会自动记录错题并进行统计展示。</p>
+
+        <div class="feature">
+            <div class="feature-text">
+                <h3>题库上传功能</h3>
+                <p>在网站首页提供简洁直观的题库上传界面，支持多种格式的题库文件上传，包括txt、xlsx、xls、pdf、docx和doc格式。系统会自动识别题库分类，并通过AI技术进行解析和整理。</p>
+                <ul>
+                    <li>支持多种文件格式</li>
+                    <li>拖放上传功能</li>
+                    <li>AI自动分类</li>
+                    <li>上传进度显示</li>
+                </ul>
+            </div>
+            <div class="feature-image">
+                <img src="https://via.placeholder.com/450x300?text=题库上传界面" alt="题库上传界面" class="screenshot">
+            </div>
+        </div>
+
+        <div class="feature">
+            <div class="feature-image">
+                <img src="https://via.placeholder.com/450x300?text=题库浏览界面" alt="题库浏览界面" class="screenshot">
+            </div>
+            <div class="feature-text">
+                <h3>题库浏览功能</h3>
+                <p>系统默认展示所有上传的题目，每道题下方显示详细解析。AI会自动分析无答案的题目并给出答案及解析。错题次数以颜色深浅标记错误频率，帮助用户快速识别难点题目。</p>
+                <ul>
+                    <li>题目分类浏览</li>
+                    <li>答案与解析展示</li>
+                    <li>错题频率标记</li>
+                    <li>搜索和筛选功能</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="feature">
+            <div class="feature-text">
+                <h3>分类导航功能</h3>
+                <p>系统在左上角设置分类导航按钮，自动识别题库分类并创建对应板块。用户点击分类可以快速跳转至该分类的第一道题目，方便用户按主题学习和复习。</p>
+                <ul>
+                    <li>自动分类识别</li>
+                    <li>快速导航跳转</li>
+                    <li>分类统计信息</li>
+                    <li>动态更新分类</li>
+                </ul>
+            </div>
+            <div class="feature-image">
+                <img src="https://via.placeholder.com/450x300?text=分类导航界面" alt="分类导航界面" class="screenshot">
+            </div>
+        </div>
+
+        <div class="feature">
+            <div class="feature-image">
+                <img src="https://via.placeholder.com/450x300?text=模拟训练界面" alt="模拟训练界面" class="screenshot">
+            </div>
+            <div class="feature-text">
+                <h3>模拟训练功能</h3>
+                <p>用户可以选择默认10题或自定义题目数量进行训练，系统会随机抽取题目组成训练集。完成后提交显示正误结果，并展示每道题的答案和解析。错题会自动记录并更新题库中的错误统计。</p>
+                <ul>
+                    <li>自定义训练数量</li>
+                    <li>随机组题训练</li>
+                    <li>即时结果反馈</li>
+                    <li>错题自动记录</li>
+                </ul>
+            </div>
+        </div>
+
+        <h2>技术实现</h2>
+        <p>本项目采用现代化的技术栈和架构，确保系统的可靠性、可扩展性和用户友好性。</p>
+
+        <h3>前端技术</h3>
+        <div class="code">
+- React + Next.js：构建响应式用户界面
+- Axios：处理HTTP请求
+- CSS-in-JS：实现组件样式化
+- 响应式设计：适配不同设备屏幕</div>
+
+        <h3>后端技术</h3>
+        <div class="code">
+- Next.js API Routes：提供服务器端API
+- formidable：处理文件上传
+- AI接口集成：题目解析与分类
+- Node.js文件系统：存储和处理题库文件</div>
+
+        <h3>数据存储</h3>
+        <div class="code">
+- 内存数据存储（演示版本）
+- 易于迁移至MongoDB或MySQL等数据库系统</div>
+
+        <div class="cta">
+            <h3>开始使用题库网站</h3>
+            <p>通过以下步骤快速上手使用：</p>
+            <ol>
+                <li>下载或克隆代码库</li>
+                <li>安装依赖：npm install</li>
+                <li>启动开发服务器：npm run dev</li>
+                <li>访问：http://localhost:3000</li>
+            </ol>
+            <a href="#" class="btn">查看GitHub代码库</a>
+        </div>
+
+        <h2>项目架构</h2>
+        <div class="code">
+题库网站/
+├── app/                # 主应用目录
+│   ├── api/            # API路由
+│   ├── components/     # React组件
+│   ├── models/         # 数据模型
+│   ├── utils/          # 工具函数
+│   ├── public/         # 静态资源
+│   ├── globals.css     # 全局样式
+│   ├── layout.js       # 布局组件
+│   └── page.js         # 主页组件
+├── uploads/            # 上传文件存储
+├── package.json        # 项目依赖
+└── next.config.js      # Next.js配置</div>
+
+        <footer>
+            <p>© 2024 题库网站项目 | 基于 React 和 Next.js 构建</p>
+        </footer>
+    </div>
+</body>
+</html> 

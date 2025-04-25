@@ -1,0 +1,523 @@
+{
+  "questions": [
+    {
+      "id": 1,
+      "content": "以下哪种数据结构适合用于实现先进先出的队列？",
+      "options": [
+        "A. 栈",
+        "B. 链表",
+        "C. 二叉树",
+        "D. 图"
+      ],
+      "answer": "B",
+      "explanation": "链表是一种线性数据结构，可以很方便地实现先进先出的队列。在链表中，我们可以在一端添加元素，在另一端删除元素，从而实现队列的FIFO特性。",
+      "category": "数据结构",
+      "errorCount": 0
+    },
+    {
+      "id": 2,
+      "content": "关系数据库中的主键的作用是什么？",
+      "options": [
+        "A. 加速查询",
+        "B. 唯一标识记录",
+        "C. 建立外键关系",
+        "D. 所有以上"
+      ],
+      "answer": "D",
+      "explanation": "主键在关系数据库中有多重作用：它能唯一标识表中的记录，加速对表的查询操作，并且可以作为其他表的外键来建立表之间的关系。",
+      "category": "数据库",
+      "errorCount": 0
+    },
+    {
+      "id": 3,
+      "content": "Python中，列表和元组的主要区别是什么？",
+      "options": [
+        "A. 列表可变，元组不可变",
+        "B. 列表用方括号，元组用圆括号",
+        "C. 列表可以包含任何数据类型，元组不能",
+        "D. A和B"
+      ],
+      "answer": "D",
+      "explanation": "Python中，列表是可变的（mutable），而元组是不可变的（immutable）。从语法上，列表使用方括号 [] 定义，而元组使用圆括号 () 定义。两者都可以包含任何数据类型。",
+      "category": "编程语言",
+      "errorCount": 0
+    },
+    {
+      "id": 4,
+      "content": "串是一种特殊的线性表，其特殊性体现在( )。",
+      "options": [],
+      "answer": "B",
+      "explanation": "",
+      "category": "串和特殊矩阵",
+      "errorCount": 0
+    },
+    {
+      "id": 5,
+      "content": "有两个串P和Q，求P在Q中首次出现的位置的运算称( )。",
+      "options": [],
+      "answer": "B",
+      "explanation": "",
+      "category": "串和特殊矩阵",
+      "errorCount": 0
+    },
+    {
+      "id": 6,
+      "content": "设串s1=\"ABCDEFG\"，s2=\"PQRST\"，函数con(x,y)返回x和y串的连接串，subs(s,i,j)返回串s的从序号i的字符开始的j个字符组成的子串，len(s)返回串s的长度，则con(subs(s1,2,len(s2)),subs(s1,len(s2),2)))的结果串是( )。",
+      "options": [],
+      "answer": "D",
+      "explanation": "",
+      "category": "串和特殊矩阵",
+      "errorCount": 0
+    },
+    {
+      "id": 7,
+      "content": "顺序串中，根据空间分配方式的不同，可分为( )。",
+      "options": [],
+      "answer": "B",
+      "explanation": "",
+      "category": "串和特殊矩阵",
+      "errorCount": 0
+    },
+    {
+      "id": 8,
+      "content": "稀疏矩阵一般的压缩方法有( )。",
+      "options": [],
+      "answer": "C",
+      "explanation": "",
+      "category": "串和特殊矩阵",
+      "errorCount": 0
+    },
+    {
+      "id": 9,
+      "content": "有以下程序：\n#include <stdio. h>\nint f1(int x, int y){return x>y? x:y;}\nint f2(int x, int y){return x<y? x:y;}\nvoid main()\n{\nint a=4,b=3,c=5,d,e,f;\nd=f1(a,b);d=f1(d,c);\ne=f2(a,b);e=f2(e,c);\nf=a+b+c-d-e;\nprintf(″ % d, % d, % d \\ n\",d,f,e );\n}\n程序运行后的输出结果是( )。",
+      "options": [],
+      "answer": "C",
+      "explanation": "",
+      "category": "基础",
+      "errorCount": 0
+    },
+    {
+      "id": 10,
+      "content": "若程序中定义了以下函数： double myadd(double a, double B) { return(a+B);} 并将其放在调用语句之后，则在调用之前应该对该函数进行说明，以下选项中错误的说明是( )。",
+      "options": [
+        "double myadd(double a,B)"
+      ],
+      "answer": "A",
+      "explanation": "",
+      "category": "基础",
+      "errorCount": 0
+    },
+    {
+      "id": 11,
+      "content": "有以下函数定义： void fun(int n, double x){ …… } 若以下选项中的变量都已正确定义并赋值，则对函数 fun的正确调用语句是( )。",
+      "options": [
+        "fun(int y,double m)"
+      ],
+      "answer": "C",
+      "explanation": "",
+      "category": "基础",
+      "errorCount": 0
+    },
+    {
+      "id": 12,
+      "content": "有以下程序：\nchar fun(char x, char y)\n{\n  if(x)\n    return y;\n}\nvoid main()\n{\n  char a='9',b='8',c='7';\n  printf(\"%c\\n\", fun(fun(a,B), fun(b,C)));\n)\n程序运行后的输出结果是( )。",
+      "options": [],
+      "answer": "A",
+      "explanation": "",
+      "category": "基础",
+      "errorCount": 0
+    },
+    {
+      "id": 13,
+      "content": "已定义 c为字符型变量，则下列语句中正确的是( )。",
+      "options": [
+        "c='97'"
+      ],
+      "answer": "C",
+      "explanation": "",
+      "category": "基础",
+      "errorCount": 0
+    },
+    {
+      "id": 14,
+      "content": "程序的功能是输出以下形式的金字塔图案：\n   *\n  ***\n *****\n*******\nvoid main(){\n  int i,j;\n  for(i=1;i<=4;i++){\n    for(j=1;j<=4-i;j++)\n      printf(\"\");\n    for(j=1;j<=_____;j++)\n      printf(\"*\");\n    printf(\"\\n\");\n  }\n}\n在下划线处应填入的是( )。",
+      "options": [],
+      "answer": "B",
+      "explanation": "",
+      "category": "基础",
+      "errorCount": 0
+    },
+    {
+      "id": 15,
+      "content": "有以下程序：\nvoid f(int v, int w)\n{\n  int t;\n  t=v;v=w;w=t;\n}\nvoid main()\n{\n  int x=1,y=3,z=2;\n  if(x>y)f(x,y);\n  else if(y>z)f(y,z);\n  else f(x,z);\n  printf(\"%d,%d,%d\\n\",x,y,z);\n}\n程序运行后的输出结果是( )。",
+      "options": [],
+      "answer": "C",
+      "explanation": "",
+      "category": "基础",
+      "errorCount": 0
+    },
+    {
+      "id": 16,
+      "content": "有以下程序：\nvoid main()\n{\n  char *p[10]={\"abc\",\"aabdfg\",\"dcdbe\",\"abbd\",\"cd\"};\n  printf(\"%d\\n\", strlen(p[4]));\n)\n程序运行后的输出结果是( )。",
+      "options": [],
+      "answer": "A",
+      "explanation": "",
+      "category": "基础",
+      "errorCount": 0
+    },
+    {
+      "id": 17,
+      "content": "有以下程序：\nvoid main()\n{\n  char ∗s[]={″one″,″two″,three″},*p;\n  p=s[1];\n  printf(\"%c,%s\\n\",*(p+1),s[0]);\n}\n程序运行后的输出结果是( )。",
+      "options": [],
+      "answer": "C",
+      "explanation": "",
+      "category": "基础",
+      "errorCount": 0
+    },
+    {
+      "id": 18,
+      "content": "若有以下定义和语句： #include <stdio. h> int a=4,b=3, *p, *q, *w; p=&a;q=&b;w=q;q=NULL; 则以下选项中错误的语句是( )。",
+      "options": [
+        "*q=0"
+      ],
+      "answer": "A",
+      "explanation": "",
+      "category": "基础",
+      "errorCount": 0
+    },
+    {
+      "id": 19,
+      "content": "若已定义的函数有返回值，则以下关于该函数调用的叙述中错误的是( )。",
+      "options": [],
+      "answer": "D",
+      "explanation": "",
+      "category": "基础",
+      "errorCount": 0
+    },
+    {
+      "id": 20,
+      "content": "若有说明“long *p,a;”,则不能通过 scanf 语句正确给输入项读入数据的程序段是( )。",
+      "options": [
+        "*p=&a",
+        " scanf(\"%ld\",p)"
+      ],
+      "answer": "A",
+      "explanation": "",
+      "category": "基础",
+      "errorCount": 0
+    },
+    {
+      "id": 21,
+      "content": "下列选项中不能正确定义二维数组的是( )。",
+      "options": [
+        "int a[2][2]={{1},{2}}"
+      ],
+      "answer": "D",
+      "explanation": "",
+      "category": "基础",
+      "errorCount": 0
+    },
+    {
+      "id": 22,
+      "content": "下列选项中正确的语句组是( )。",
+      "options": [
+        "char s[8]",
+        "s={\"Beijing\"}"
+      ],
+      "answer": "D",
+      "explanation": "",
+      "category": "基础",
+      "errorCount": 0
+    },
+    {
+      "id": 23,
+      "content": "有以下程序:\n#include <stdio. h>\n#define F(X,Y)(X) *(Y)\nvoid main()\n{\n  int a=3,b=4;\n  printf(\"%d\\n\",F(a++,b++));\n}\n程序运行后的输出结果是( )。",
+      "options": [],
+      "answer": "A",
+      "explanation": "",
+      "category": "基础",
+      "errorCount": 0
+    },
+    {
+      "id": 24,
+      "content": "若有定义“int *p[3];”,则下列叙述中正确的是( )。",
+      "options": [],
+      "answer": "B",
+      "explanation": "",
+      "category": "基础",
+      "errorCount": 0
+    },
+    {
+      "id": 25,
+      "content": "已定义以下函数：\nfun(int *p)\n{ return *p;}\n该函数的返回值是( )。",
+      "options": [],
+      "answer": "C",
+      "explanation": "",
+      "category": "基础",
+      "errorCount": 0
+    },
+    {
+      "id": 26,
+      "content": "下列程序中函数 scmp 的功能是返回形参指针 s1 和 s2 所指字符串中较小字符串的首地址：\nchar *scmp(char *s1, char * s2){\n  if(strcmp(s1,s2)<0)\n  return(s1);\n  else return(s2);\n}\nvoid main(){\n  int i;char string[20], str[3][20];\n  for(i=0;i<3;i++) gets(str[i]);\n  strcpy(string, scmp(str[0], str[1]));\n  strcpy(string, scmp(string, str[2]));\n  printf(\"%s\\n\", string);\n}\n若程序运行时依次输入：abcd、abba和 abc三个字符串，则输出结果是( )。",
+      "options": [],
+      "answer": "B",
+      "explanation": "",
+      "category": "基础",
+      "errorCount": 0
+    },
+    {
+      "id": 27,
+      "content": "有以下程序:\nstructs\n{\n  int x,y;\n}data[2]={10,100,20,200};\nvoid main()\n{\n  struct s *p=data;\n  printf(\"%d\\n\",++(p->x));\n}\n程序运行后的输出结果是( )。",
+      "options": [],
+      "answer": "B",
+      "explanation": "",
+      "category": "基础",
+      "errorCount": 0
+    },
+    {
+      "id": 28,
+      "content": "有以下程序:\nvoid main(){\n  int a[3][3],*p,i;\n  p=&a[0][0];\n  for(i=0;i<9;i++) p[i]=i+1;\n  printf(\"%d\\n\",a[1][2]);\n}\n程序运行后的输出结果是( )。",
+      "options": [],
+      "answer": "B",
+      "explanation": "",
+      "category": "基础",
+      "errorCount": 0
+    },
+    {
+      "id": 29,
+      "content": "有以下程序段：\n  int a[10]={1,2,3,4,5,6,7,8,9,10},*p=&a[3],b;b=p[5];\nb中的值是( )。",
+      "options": [],
+      "answer": "D",
+      "explanation": "",
+      "category": "基础",
+      "errorCount": 0
+    },
+    {
+      "id": 30,
+      "content": "已定义以下函数：\nfun(char *p2, char *p1)\n{while(( *p2= *p1)!='\\0'){p1++;p2++;}}\n函数的功能是( )。",
+      "options": [],
+      "answer": "A",
+      "explanation": "",
+      "category": "基础",
+      "errorCount": 0
+    },
+    {
+      "id": 31,
+      "content": "有以下程序:\nvoid swap1(int c[]){\n  int t;\n  t=c[0];c[0]=c[1];c[1]=t;\n}\nvoid swap2(int c0, int c1){\n  int t;\n  t=c0;c0=c1;c1=t;\n}\nvoid main(){\n  int a[2]={3,5},b[2]={3,5};\n  swap1(a);\n  swap2(b[0],b[1]);\n  printf(\"%d %d %d %d\\n\",a[0],a[1],b[0],b[1]);\n}\n程序运行后的输出结果是( )。",
+      "options": [],
+      "answer": "B",
+      "explanation": "",
+      "category": "基础",
+      "errorCount": 0
+    },
+    {
+      "id": 32,
+      "content": "有以下程序:\nvoid sum(int * a)\n{a[0]=a[1];}\nvoid main(){\n  int aa[10]={1,2,3,4,5,6,7,8,9,10},i;\n  for(i=2;i>=0;i--) sum(&aa[i]);\n  printf(\"%d\\n\", aa[0]);\n}\n程序运行后的输出结果是( )。",
+      "options": [],
+      "answer": "A",
+      "explanation": "",
+      "category": "基础",
+      "errorCount": 0
+    },
+    {
+      "id": 33,
+      "content": "有以下程序:\nint a=2;\nint f(int *a)\n{ return(*a)++;}\nvoid main(){\n  int s=0;\n  { int a=5;\n    s+=f(&a);\n  }\n  s+=f(&a);\n  printf(\"%d\\n\",s);\n}\n程序运行后的输出结果是( )。",
+      "options": [],
+      "answer": "C",
+      "explanation": "",
+      "category": "基础",
+      "errorCount": 0
+    },
+    {
+      "id": 34,
+      "content": "设有一个 10 阶的对称矩阵A ，采用压缩存储方式，以行序为主存储， a11为第一元\n素，其存储地址为1，每个元素占一个地址空间，则a85的地址为",
+      "options": [],
+      "answer": "C",
+      "explanation": "",
+      "category": "矩阵",
+      "errorCount": 0
+    },
+    {
+      "id": 35,
+      "content": "若对n阶对称矩阵A以行序为主序方式将其下三角形的元素(包括主对角线上所有元素)依次存放于一维数组B[1...(n(n+1))/2]中,则在B 中确定aij（i<j）的位置k的关系为",
+      "options": [],
+      "answer": "B",
+      "explanation": "",
+      "category": "矩阵",
+      "errorCount": 0
+    },
+    {
+      "id": 36,
+      "content": "二维数组A的每个元素是由10个字符组成的串，其行下标i=0,1...8, 列下标j=1,2...10 。若A按行优先存储，元素A[8,5]的起始地址与当A按列优先存储时的元素（）的起始地址相同。设每个字符占一个字节。",
+      "options": [],
+      "answer": "B",
+      "explanation": "",
+      "category": "矩阵",
+      "errorCount": 0
+    },
+    {
+      "id": 37,
+      "content": "某内排序方法的稳定性是指( )。",
+      "options": [],
+      "answer": "D",
+      "explanation": "",
+      "category": "排序",
+      "errorCount": 0
+    },
+    {
+      "id": 38,
+      "content": "若需在O(nlog_2 n)的时间内完成对数组的排序，且要求排序是稳定的，则可选择的排序方法是( )。",
+      "options": [],
+      "answer": "C",
+      "explanation": "",
+      "category": "排序",
+      "errorCount": 0
+    },
+    {
+      "id": 39,
+      "content": "在下列排序算法中，( )算法的时间复杂度与初始排序无关。",
+      "options": [],
+      "answer": "D",
+      "explanation": "",
+      "category": "排序",
+      "errorCount": 0
+    },
+    {
+      "id": 40,
+      "content": "下列排序算法中，在每一趟都能选出一个元素放到其最终位置上，并且其时间性能受数据初始特性影响的是( )。",
+      "options": [],
+      "answer": "B",
+      "explanation": "",
+      "category": "排序",
+      "errorCount": 0
+    },
+    {
+      "id": 41,
+      "content": "对序列{15,9,7,8,20,2,4}进行排序，进行一趟后数据的排列变为{9,7,8,15,2,4,20}；则采用的是( )排序。",
+      "options": [],
+      "answer": "D",
+      "explanation": "",
+      "category": "排序",
+      "errorCount": 0
+    },
+    {
+      "id": 42,
+      "content": "下列排序算法中，( )不能保证每趟排序至少能将一个元素放到其最终的位置上。",
+      "options": [],
+      "answer": "B",
+      "explanation": "",
+      "category": "排序",
+      "errorCount": 0
+    },
+    {
+      "id": 43,
+      "content": "一组记录的关键码为(46,79,56,38,40,84)，则利用快速排序的方法，以第一个记录为基准得到的一次划分结果为( )。",
+      "options": [],
+      "answer": "C",
+      "explanation": "",
+      "category": "排序",
+      "errorCount": 0
+    },
+    {
+      "id": 44,
+      "content": "下列排序算法中，占用辅助空间最多的是( )。",
+      "options": [],
+      "answer": "A",
+      "explanation": "",
+      "category": "排序",
+      "errorCount": 0
+    },
+    {
+      "id": 45,
+      "content": "就平均性能而言，目前最好的内排序方法是( )排序法。",
+      "options": [],
+      "answer": "D",
+      "explanation": "",
+      "category": "排序",
+      "errorCount": 0
+    },
+    {
+      "id": 46,
+      "content": "从未排序序列中依次取出一个元素与已排序序列中的元素依次进行比较，然后将其放在已排序序列的合适位置，该排序方法称为( )排序法。",
+      "options": [],
+      "answer": "A",
+      "explanation": "",
+      "category": "排序",
+      "errorCount": 0
+    },
+    {
+      "id": 47,
+      "content": "在排序算法中，每次从未排序的记录中挑出最小(或最大)关键码字的记录，加人到已排序记录的末尾,该排序方法是()。",
+      "options": [],
+      "answer": "A",
+      "explanation": "",
+      "category": "排序",
+      "errorCount": 0
+    },
+    {
+      "id": 48,
+      "content": "直接插人排序在最好情况下的时间复杂度为()。",
+      "options": [],
+      "answer": "B",
+      "explanation": "",
+      "category": "排序",
+      "errorCount": 0
+    },
+    {
+      "id": 49,
+      "content": "对序列{15,9,7,8,20,-1,4,}，用希尔排序方法排序，经一趟后序列变为{15,-1,4,8,20,9,7}，则该次采用的增量是( )。",
+      "options": [],
+      "answer": "B",
+      "explanation": "",
+      "category": "排序",
+      "errorCount": 0
+    },
+    {
+      "id": 50,
+      "content": "快速排序方法在( )情况下最不利于发挥其长处。",
+      "options": [],
+      "answer": "D",
+      "explanation": "",
+      "category": "排序",
+      "errorCount": 0
+    },
+    {
+      "id": 51,
+      "content": "下列四个序列中，( )是堆。",
+      "options": [],
+      "answer": "C",
+      "explanation": "",
+      "category": "排序",
+      "errorCount": 0
+    },
+    {
+      "id": 52,
+      "content": "从未排序序列中依次取出元素与已排序序列中的元素进行比较， 将其放入已排序序列的正确位置上的方法，这种排序方法称为（）",
+      "options": [],
+      "answer": "C",
+      "explanation": "",
+      "category": "排序",
+      "errorCount": 0
+    },
+    {
+      "id": 53,
+      "content": "在一棵度为3的树中，度为3的结点数为2个，度为2的结点数为1个，度为1的结点数为2个，则度为0的结点数为( )个。",
+      "options": [],
+      "answer": "C",
+      "explanation": "",
+      "category": "树和二叉树",
+      "errorCount": 0
+    }
+  ],
+  "categories": [
+    "数据结构",
+    "数据库",
+    "编程语言",
+    "串和特殊矩阵",
+    "基础",
+    "矩阵",
+    "排序",
+    "树和二叉树"
+  ],
+  "nextId": 54
+}
