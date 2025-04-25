@@ -34,7 +34,9 @@ yarn-error.log*
 next-env.d.ts
 
 # uploads folder (user data)
-/public/uploads/
+/public/uploads/*
+!/public/uploads/.gitkeep
+/uploads/
 
 # IDE files
 .idea/
